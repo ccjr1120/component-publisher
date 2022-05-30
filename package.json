@@ -4,8 +4,13 @@
   "description": "可以通过本项目自动发布单个React或者Vue的组件 ### 实现思路 - 项目模板支持解析vue语法和react语法,支持typescript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node ./scripts/dev.js",
+    "dev-vue": "node ./scripts/dev.js --vue",
+    "dev-react": "node ./scripts/dev.js --react"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
 }
