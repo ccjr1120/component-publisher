@@ -1,6 +1,5 @@
 const inquirer = require('inquirer');
 
-// 从命令行接收参数
 const arguments = process.argv.splice(2);
 
 let libraryName = arguments[0];
