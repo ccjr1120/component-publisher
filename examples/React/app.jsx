@@ -1,5 +1,5 @@
-import ReactComponent from './components/ReactComponent';
-import ReactTsComponent from './components/ReactTsComponent';
+import ReactComponent from '../components/ReactComponent';
+import ReactTsComponent from '../components/ReactTsComponent';
 
 const App = () => <ReactTsComponent />;
 const App = () => <ReactComponent />;

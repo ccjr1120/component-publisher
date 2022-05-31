@@ -1,8 +1,14 @@
 const inquirer = require('inquirer');
+const shell = require('shelljs');
 
-const arguments = process.argv.splice(2);
+function runPropject(libraryName) {
+  const scriptName = `${libraryName}.config.js`;
+  shell.exec(
+    `webpack serve --color --progress --config ./webpack-config/${scriptName}`
+  ).stdout;
+}
 
-let libraryName = arguments[0];
+let libraryName = process.argv.splice(2)[0];
 if (!libraryName) {
   inquirer
     .prompt([
@@ -18,8 +24,9 @@ if (!libraryName) {
       if (libraryName !== 'vue' && libraryName !== 'react') {
         return;
       }
-      console.log(`run for ${libraryName}`);
+      runPropject(libraryName);
     });
 } else {
   libraryName = libraryName.replace('--', '');
+  runPropject(libraryName);
 }
