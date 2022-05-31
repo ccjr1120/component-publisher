@@ -1,7 +1,6 @@
 const path = require('path');
-const webpack = require('webpack');
 const { merge } = require('webpack-merge');
-const common = require('./common.config.js');
+const common = require('./common.config');
 
 const fileDirectory = path.join(__dirname, '../src/examples/Vue/app.vue');
 

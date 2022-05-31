@@ -3,9 +3,11 @@ const shell = require('shelljs');
 
 function runPropject(libraryName) {
   const scriptName = `${libraryName}.config.js`;
-  shell.exec(
-    `webpack serve --color --progress --config ./webpack-config/${scriptName}`
-  ).stdout;
+  shell
+    .exec(
+      `webpack serve --color --progress --mode development --config ./webpack-config/${scriptName}`,
+    )
+    .stdout();
 }
 
 let libraryName = process.argv.splice(2)[0];
