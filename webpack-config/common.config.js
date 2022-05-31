@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
+const { VueLoaderPlugin } = require('vue-loader');
 
 const srcDir = path.join(__dirname, '../src');
 
@@ -29,6 +30,7 @@ module.exports = {
       ],
     }),
     new webpack.HotModuleReplacementPlugin(),
+    new VueLoaderPlugin(),
   ],
   module: {
     rules: [
@@ -45,9 +47,13 @@ module.exports = {
         },
       },
       {
-        test: /\.(tsx|ts|js|jsx|vue)?$/,
+        test: /\.(tsx|ts|js|jsx)?$/,
         use: ['babel-loader'],
         exclude: /node_modules/,
+      },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader',
       },
     ],
   },

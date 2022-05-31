@@ -17,7 +17,7 @@ function App() {
   );
 }
 
-const rootNode = document.getElementById('root');
+const rootNode = document.getElementById('app');
 const root = createRoot(rootNode);
 
 root.render(<App />);
